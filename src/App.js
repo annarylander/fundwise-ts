@@ -11,9 +11,9 @@ function App() {
   return (
     <FundProvider>
       <Router>
-        <div className="flex flex-col justify-between h-screen">
+        <div className="flex flex-col justify-between">
           <Navbar />
-          <main className="mx-0 pb-12 ">
+          <main className="mx-0">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/fund" element={<Home />} />
