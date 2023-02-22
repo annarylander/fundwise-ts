@@ -1,5 +1,5 @@
-runtime: nodejs16
-
+runtime: nodejs18
+service: frontend2
 handlers:
   # Serve all static files with url ending with a file extension
   - url: /(.*\..+)$

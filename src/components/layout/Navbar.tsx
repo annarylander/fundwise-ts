@@ -1,14 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { AiOutlineFund } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 
-export default function Navbar({ title }) {
+type NavbarProps = {
+  title: string;
+};
+
+export default function Navbar({ title }: NavbarProps) {
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabindex="0" className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -17,15 +20,15 @@ export default function Navbar({ title }) {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
           </label>
           <ul
-            tabindex="0"
+            tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
@@ -41,7 +44,6 @@ export default function Navbar({ title }) {
         </div>
         <AiOutlineFund className="inline pr-2 text-3xl text-success hidden md:flex" />
         <a href="/#landing" className="normal-case text-xl">
-          {" "}
           {title}
         </a>
       </div>
@@ -66,11 +68,3 @@ export default function Navbar({ title }) {
     </div>
   );
 }
-
-Navbar.defaultProps = {
-  title: "Fundwise",
-};
-
-Navbar.propTypes = {
-  title: PropTypes.string,
-};

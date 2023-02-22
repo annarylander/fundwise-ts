@@ -1,4 +1,14 @@
-const fundReducer = (state, action) => {
+export type FundState = {
+  funds: [];
+  loading: boolean;
+};
+
+export type ReducerAction = {
+  type: string;
+  payload?: any;
+};
+
+const fundReducer = (state: FundState, action: ReducerAction) => {
   switch (action.type) {
     case "GET_FUNDS":
       return {
@@ -16,6 +26,7 @@ const fundReducer = (state, action) => {
       return {
         ...state,
         funds: [],
+        loading: false,
       };
     default:
       return state;

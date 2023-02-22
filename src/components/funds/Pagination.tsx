@@ -1,6 +1,14 @@
 import React from "react";
 
-export default function Pagination({ fundsPerPage, totalFunds, paginate }) {
+export default function Pagination({
+  fundsPerPage,
+  totalFunds,
+  paginate,
+}: {
+  fundsPerPage: number;
+  totalFunds: number;
+  paginate: (pageNumber: number) => void;
+}) {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalFunds / fundsPerPage); i++) {

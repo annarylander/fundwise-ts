@@ -6,13 +6,14 @@ import Detail from "./pages/Detail";
 import NotFound from "./pages/NotFound";
 import { FundProvider } from "./context/FundContext";
 import AllFunds from "./pages/AllFunds";
+import "./App.css";
 
 function App() {
   return (
     <FundProvider>
       <Router>
         <div className="flex flex-col justify-between">
-          <Navbar />
+          <Navbar title="FUNDWISE" />
           <main className="mx-0">
             <Routes>
               <Route path="/" element={<Home />} />

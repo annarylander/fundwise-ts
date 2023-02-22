@@ -9,12 +9,10 @@ export default function Search() {
 
   const { searchFunds, clearResults, funds } = useContext(FundContext);
 
-  const handleChange = (e) => setQuery(e.target.value);
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (query === "") {
-      alert("Please enter something", "error");
+      alert("Please enter something");
     } else {
       searchFunds(query);
       setQuery("");
@@ -33,7 +31,7 @@ export default function Search() {
                   <input
                     type="text"
                     value={query}
-                    onChange={handleChange}
+                    onChange={(e) => setQuery(e.target.value)}
                     placeholder="Type here"
                     className="w-full pr-40 bg-gray-200 input input-md text-black"
                   />
@@ -57,7 +55,7 @@ export default function Search() {
 
             <div className="">
               {funds &&
-                funds.slice("").map((fund, index) => {
+                funds.slice().map((fund, index) => {
                   return (
                     <div key={index}>
                       <ul className="menu bg-base-100 w-90">

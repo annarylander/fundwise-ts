@@ -3,6 +3,10 @@ import Pagination from "../components/funds/Pagination";
 import Funds from "../components/funds/Funds";
 import FundContext from "../context/FundContext";
 
+interface PaginateFunction {
+  (pageNumber: number): void;
+}
+
 export default function AllFunds() {
   const { funds, loading, fetchFunds } = useContext(FundContext);
 
@@ -19,7 +23,7 @@ export default function AllFunds() {
   const currentFund = funds.slice(indexOfFirstFund, indexOfLastFund);
 
   //Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate: PaginateFunction = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="container mx-auto">
