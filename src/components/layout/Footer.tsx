@@ -9,13 +9,16 @@ export default function Footer() {
       <div className="grid grid-flow-col gap-4"></div>
       <div>
         <div className="grid grid-flow-col gap-4">
-          <a href="https://github.com/annarylander">
+          <a href="https://github.com/annarylander" className="github">
             <AiFillGithub className="text-2xl" />
           </a>
-          <a href="https://www.linkedin.com/in/anna-rylander9009/">
+          <a
+            href="https://www.linkedin.com/in/anna-rylander9009/"
+            className="linkedin"
+          >
             <AiFillLinkedin className="text-2xl" />
           </a>
-          <a href="mailto:annaelida.rylander@gmail.com">
+          <a href="mailto:annaelida.rylander@gmail.com" className="mail">
             <AiFillMail className="text-2xl" />
           </a>
         </div>
